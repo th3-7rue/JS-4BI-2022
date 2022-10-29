@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="cyberpunk">
 
 <head>
     <meta charset="UTF-8">
@@ -8,10 +8,22 @@
     <title>Gestione appuntamenti</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.33.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
 
 <body>
-    <h2>Gestione Note 1.0</h2>
+    <style>
+        h1 {
+            font-family: 'Inter', sans-serif
+        }
+    </style>
+    <h1>Gestione Note 1.0</h1><br>
+    <input type="text" id="edtNota" class="input input-bordered">
+    <button id="btnAdd" class="btn btn-primary">Aggiungi evento
+    </button>
+    <button id="btnClear" class="btn btn-ghost">Cancella
+        lista</button>
+    <br>
     <div class="alert shadow-lg" hidden="true" id="conferma">
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -23,14 +35,9 @@
         </div>
         <div class="flex-none">
             <button class="btn btn-sm btn-ghost" id="btnNo">No, annulla</button>
-            <button class="btn btn-sm btn-primary" id="btnYes">Sì, cancella</button>
+            <button class="btn btn-sm btn-warning" id="btnYes">Sì, cancella</button>
         </div>
     </div>
-    <input type="text" id="edtNota" class="input input-bordered">
-    <button id="btnAdd" class="btn">Aggiungi
-    </button>
-    <button id="btnClear" class="btn">Cancella
-        lista</button>
     <br>
     <div class="overflow-x-auto">
         <table class="table w-full" id="listaTask">
