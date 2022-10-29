@@ -10,6 +10,8 @@ const btnAdd = document.getElementById("btnAdd");
 const btnClear = document.getElementById("btnClear");
 const myTable = document.getElementById("bodyTask");
 const alertConferma = document.getElementById("conferma")
+const btnNo = document.getElementById("btnNo")
+const btnYes = document.getElementById("btnYes")
 var riga = 0
 // Funzioni
 function ClearList() {
@@ -50,10 +52,14 @@ btnAdd.onclick = function () {
     }
 }
 btnClear.onclick = function () {
-    alertConferma.hidden = "false"
-    {
+    alertConferma.hidden = false
+    btnYes.onclick = function () {
         ClearList();
         localStorage.clear();
+        alertConferma.hidden = true;
+    }
+    btnNo.onclick = function () {
+        alertConferma.hidden = true;
     }
 }
 // Codice del main dell'avvio
