@@ -1,0 +1,54 @@
+let ciaoClasseDiv = document.getElementsByClassName("ciao");
+//console.log(ciaoClasseDiv);
+for(let i = 0; i < ciaoClasseDiv.length; i++){
+    ciaoClasseDiv[i].style.border = "3px solid green";
+}
+
+let pageDivs = document.querySelectorAll("[test]");
+//console.log(pageDivs);
+
+for(let i = 0; i < pageDivs.length; i++){
+    pageDivs[i].style.backgroundColor = "blue";
+}
+
+const ulTag = document.querySelector("ul");
+
+function ClearList(){
+    let liTags = document.querySelectorAll("ul>li");
+    console.log(liTags);
+    for(let i = 0; i < liTags.length; i++){
+        ulTag.removeChild(liTags[i]);
+    }
+}
+
+function AppendToList(text){
+    AddToList(text);
+}
+
+function PrependToList(text){
+    AddToList(text,false);
+}
+
+function AddToList(text, append = true){
+    let elementToAdd = document.createElement("li");
+    elementToAdd.innerHTML = text;
+    if(append){
+        ulTag.appendChild(elementToAdd);
+    }else{
+        ulTag.prepend(elementToAdd);
+    }
+}
+
+ClearList();
+AppendToList("prova");
+AppendToList("prova2");
+PrependToList("prova3");
+
+const addTimeBtn = document.getElementById("addTime");
+addTimeBtn.onclick = event => {
+    AppendToList(dateDate.now());
+}
+
+pippoDiv.onpointerenter = event => {
+    PrependToList(Date.now());
+}
