@@ -9,7 +9,7 @@ let edtNota = document.getElementById("edtNota");
 const btnAdd = document.getElementById("btnAdd");
 const btnClear = document.getElementById("btnClear");
 const myTable = document.getElementById("bodyTask");
-const alertConferma = document.getElementById("conferma")
+const alertConferma = document.getElementById("my-modal-4")
 const btnNo = document.getElementById("btnNo")
 const btnYes = document.getElementById("btnYes")
 var riga = parseInt(localStorage.getItem('riga'))
@@ -61,14 +61,13 @@ btnAdd.onclick = function () {
     }
 }
 btnClear.onclick = function () {
-    alertConferma.hidden = false
     btnYes.onclick = function () {
         ClearList();
         localStorage.clear();
-        alertConferma.hidden = true;
+        alertConferma.checked = false
     }
     btnNo.onclick = function () {
-        alertConferma.hidden = true;
+        alertConferma.checked = false
     }
 }
 // Codice del main dell'avvio
