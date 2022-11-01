@@ -12,7 +12,11 @@ const myTable = document.getElementById("bodyTask");
 const alertConferma = document.getElementById("my-modal-4")
 const btnNo = document.getElementById("btnNo")
 const btnYes = document.getElementById("btnYes")
-var riga = parseInt(localStorage.getItem('riga'))
+var riga
+if (localStorage.getItem('riga') === null) {
+    localStorage.setItem('riga', 0)
+}
+riga = parseInt(localStorage.getItem('riga'))
 // Funzioni
 function ClearList() {
     let tdTags = myTable.getElementsByTagName("tr");
