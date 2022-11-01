@@ -12,7 +12,7 @@ const myTable = document.getElementById("bodyTask");
 const alertConferma = document.getElementById("conferma")
 const btnNo = document.getElementById("btnNo")
 const btnYes = document.getElementById("btnYes")
-var riga = 0
+var riga = parseInt(localStorage.getItem('riga'))
 // Funzioni
 function ClearList() {
     let tdTags = myTable.getElementsByTagName("tr");
@@ -22,6 +22,8 @@ function ClearList() {
         myTable.deleteRow(i);
     }
     riga = 0
+    localStorage.setItem('riga', riga);
+
 }
 function AddToList(text) {
     var row = myTable.insertRow(riga)
@@ -37,9 +39,16 @@ function AddToList(text) {
     dDettToAdd.innerHTML = edtNota.value
     row.appendChild(dDettToAdd)
     riga += 1
+    localStorage.setItem('riga', riga);
 
 }
 //Eventi
+edtNota.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        btnAdd.click();
+    }
+})
 btnAdd.onclick = function () {
     if (edtNota.value != "") {
         const data = new Date();
@@ -63,5 +72,4 @@ btnClear.onclick = function () {
     }
 }
 // Codice del main dell'avvio
-ClearList();
 myTable.innerHTML = localStorage.getItem("Lista");
