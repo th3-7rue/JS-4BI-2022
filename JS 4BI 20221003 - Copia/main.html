@@ -21,23 +21,24 @@
     <input type="text" id="edtNota" class="input input-bordered">
     <button id="btnAdd" class="btn btn-primary">Aggiungi evento
     </button>
-    <button id="btnClear" class="btn btn-ghost">Cancella
-        lista</button>
+    <label for="my-modal-4" class="btn btn-ghost" id="btnClear">Cancella
+        lista</label>
+
     <br>
-    <div class="alert shadow-lg" hidden="true" id="conferma">
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                class="stroke-info flex-shrink-0 w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <span>Sei sicuro di voler cancellare la lista?</span>
-        </div>
-        <div class="flex-none">
-            <button class="btn btn-sm btn-ghost" id="btnNo">No, annulla</button>
-            <button class="btn btn-sm btn-warning" id="btnYes">Sì, cancella</button>
-        </div>
-    </div>
+
+    <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+    <label for="my-modal-4" class="modal cursor-pointer" id="conferma">
+        <label class="modal-box relative" for="">
+            <h3 class="text-lg font-bold">Cancella
+                lista</h3>
+            <p class="py-4">Sei proprio sicuro di voler cancellare la lista?
+            </p>
+
+            <label for="my-modal" class="btn btn-ghost" id="btnNo">No, annulla</label>
+
+            <label for="my-modal" class="btn" id="btnYes">Sì, cancella</label>
+        </label>
+    </label>
     <br>
     <div class="overflow-x-auto">
         <table class="table w-full" id="listaTask">
