@@ -19,14 +19,7 @@ if (localStorage.getItem('riga') === null) {
 riga = parseInt(localStorage.getItem('riga'))
 // Funzioni
 function ClearList() {
-    let tdTags = myTable.getElementsByTagName("tr");
-    console.log(tdTags);
-    let tdTagsL = tdTags.length;
-    for (var i = tdTagsL - 1; i >= 0; i--) {
-        myTable.deleteRow(i);
-    }
-    riga = 0
-    localStorage.setItem('riga', riga);
+    myTable.innerHTML = ""
 
 }
 function AddToList(text) {
