@@ -12,6 +12,7 @@ const myTable = document.getElementById("bodyTask");
 const alertConferma = document.getElementById("my-modal-4")
 const btnNo = document.getElementById("btnNo")
 const btnYes = document.getElementById("btnYes")
+const btnSelected = document.getElementById("btnSelected")
 var riga
 if (localStorage.getItem('riga') === null) {
     localStorage.setItem('riga', 0)
@@ -20,6 +21,8 @@ riga = parseInt(localStorage.getItem('riga'))
 // Funzioni
 function ClearList() {
     myTable.innerHTML = ""
+    localStorage.setItem('riga', 0)
+    riga = 0
 
 }
 function AddToList(text) {
@@ -27,14 +30,16 @@ function AddToList(text) {
     let hToAdd = document.createElement("th")
     let dDataToAdd = document.createElement("td")
     let dDettToAdd = document.createElement("td")
+    let dSelToAdd = document.createElement("td")
 
     hToAdd.innerHTML = riga + 1
     row.appendChild(hToAdd);
-
+    dSelToAdd.innerHTML = '<input type="checkbox"  class="checkbox" />'
     dDataToAdd.innerHTML = text
     row.appendChild(dDataToAdd);
     dDettToAdd.innerHTML = edtNota.value
     row.appendChild(dDettToAdd)
+    row.appendChild(dSelToAdd)
     riga += 1
     localStorage.setItem('riga', riga);
 
@@ -57,15 +62,14 @@ btnAdd.onclick = function () {
         localStorage.setItem("Lista", myTable.innerHTML)
     }
 }
-btnClear.onclick = function () {
-    btnYes.onclick = function () {
-        ClearList();
-        localStorage.clear();
-        alertConferma.checked = false
-    }
-    btnNo.onclick = function () {
-        alertConferma.checked = false
-    }
+btnYes.onclick = function () {
+    ClearList();
+    localStorage.clear();
+    alertConferma.checked = false
 }
+btnNo.onclick = function () {
+    alertConferma.checked = false
+}
+
 // Codice del main dell'avvio
 myTable.innerHTML = localStorage.getItem("Lista");

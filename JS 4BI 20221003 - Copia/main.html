@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="luxury">
+<html lang="it" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -12,13 +12,7 @@
 </head>
 
 <body>
-    <div class="toast toast-top toast-start">
-        <div class="alert alert-info">
-            <div>
-                <span>Gestione Note 1.0</span>
-            </div>
-        </div>
-    </div><br><br><br><br>
+    <h1 class="font-title mb-2 text-4xl font-extrabold sm:text-5xl lg:text-7xl">Gestione note</h1>
     <input type="text" id="edtNota" class="input input-bordered w-full max-w-xs"><br><br>
     <button id="btnAdd" class="btn btn-primary">Aggiungi evento
     </button>
@@ -32,12 +26,12 @@
         <label class="modal-box relative" for="">
             <h3 class="text-lg font-bold">Cancella
                 lista</h3>
-            <p class="py-4">Sei proprio sicuro di voler cancellare la lista?
+            <p class="py-4">Sei proprio sicuro di voler cancellare gli elementi selezionati?
             </p>
 
             <label for="my-modal" class="btn btn-ghost" id="btnNo">No, annulla</label>
-
-            <label for="my-modal" class="btn" id="btnYes">Sì, cancella</label>
+            <label for="my-modal" class="btn btn-secondary" id="btnSelected">Solo gli elementi selezionati</label>
+            <label for="my-modal" class="btn btn-primary" id="btnYes">Cancella tutto</label>
         </label>
     </label>
     <br>
@@ -45,9 +39,12 @@
         <table class="table w-full" id="listaTask">
             <thead>
                 <tr>
-                    <th>N°</th>
+                    <th>
+                        N°
+                    </th>
                     <th>Data e ora</th>
                     <th>Dettagli</th>
+                    <th>Seleziona</th>
                 </tr>
             </thead>
             <tbody id="bodyTask">
