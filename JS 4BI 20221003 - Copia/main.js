@@ -34,7 +34,7 @@ function AddToList(text) {
 
     hToAdd.innerHTML = riga + 1
     row.appendChild(hToAdd);
-    dSelToAdd.innerHTML = '<input type="checkbox"  class="checkbox" />'
+    dSelToAdd.innerHTML = '<input type="checkbox" class="checkbox" />'
     dDataToAdd.innerHTML = text
     row.appendChild(dDataToAdd);
     dDettToAdd.innerHTML = edtNota.value
@@ -56,7 +56,7 @@ btnAdd.onclick = function () {
         const data = new Date();
         const giorno = data.toLocaleDateString();
         const ora = data.toLocaleTimeString();
-        AddToList(giorno + " " + ora + " ");
+        AddToList(giorno + " " + ora);
         edtNota.value = "";
         edtNota.focus();
         localStorage.setItem("Lista", myTable.innerHTML)
@@ -68,6 +68,27 @@ btnYes.onclick = function () {
     alertConferma.checked = false
 }
 btnNo.onclick = function () {
+    alertConferma.checked = false
+}
+btnSelected.onclick = function () {
+    let rowsInput = myTable.getElementsByTagName('input')
+    let rowsLength = rowsInput.length
+    for (var i = rowsLength - 1; i >= 0; i--) {
+        if (rowsInput[i].checked) {
+            myTable.deleteRow(i)
+            riga--
+            localStorage.setItem('riga', riga);
+            localStorage.setItem("Lista", myTable.innerHTML)
+
+        }
+    }
+    let th = myTable.getElementsByTagName('th')
+    var myRiga = 1
+    for (let i = 0; i < rowsInput.length; i++) {
+        th[i].innerHTML = myRiga
+        myRiga++
+        localStorage.setItem("Lista", myTable.innerHTML)
+    }
     alertConferma.checked = false
 }
 
