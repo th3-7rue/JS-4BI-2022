@@ -63,6 +63,7 @@ btnAdd.onclick = function () {
     }
 }
 btnYes.onclick = function () {
+    localStorage.appendChild("Cestino",myTable.innerHTML)
     ClearList();
     localStorage.clear();
     alertConferma.checked = false
@@ -75,6 +76,7 @@ btnSelected.onclick = function () {
     let rowsLength = rowsInput.length
     for (var i = rowsLength - 1; i >= 0; i--) {
         if (rowsInput[i].checked) {
+            localStorage.setItem("Cestino",)
             myTable.deleteRow(i)
             riga--
             localStorage.setItem('riga', riga);

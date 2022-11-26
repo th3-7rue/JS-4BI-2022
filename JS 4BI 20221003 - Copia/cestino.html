@@ -1,12 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cestino</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.33.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
 </head>
 <body>
-    
+    <h1 class="font-title mb-2 text-4xl font-extrabold sm:text-5xl lg:text-7xl">Cestino</h1>
+    <label id="btnClear" class="btn" for="my-modal-4">Cancella definitivamente</label>
+    <label id="btnRestore" class="btn" for="my-modal-3">Ripristina</label>
+    <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+    <label for="my-modal-4" class="modal cursor-pointer" id="conferma">
+        <label class="modal-box relative" for="">
+            <h3 class="text-lg font-bold">Cancella
+                definitivamente</h3>
+            <p class="py-4">Sei proprio sicuro di voler cancellare gli elementi selezionati?
+            </p>
+
+            <label for="my-modal" class="btn btn-ghost" id="btnNo">No, annulla</label>
+            <label for="my-modal" class="btn btn-secondary" id="btnSelected">Solo gli elementi selezionati</label>
+            <label for="my-modal" class="btn btn-primary" id="btnYes">Cancella tutto</label>
+        </label>
+    </label>
+<br>
+<input type="checkbox" id="my-modal-3" class="modal-toggle" />
+<label for="my-modal-3" class="modal cursor-pointer" id="conferma">
+    <label class="modal-box relative" for="">
+        <h3 class="text-lg font-bold">Ripristina</h3>
+        <p class="py-4">Sei proprio sicuro di voler ripristinare gli elementi selezionati?
+        </p>
+
+        <label for="my-modal" class="btn btn-ghost" id="btnRNo">No, annulla</label>
+        <label for="my-modal" class="btn btn-secondary" id="btnRSelected">Solo gli elementi selezionati</label>
+        <label for="my-modal" class="btn btn-primary" id="btnRYes">Ripristina tutto</label>
+    </label>
+</label>
+<br>
+
+    <div class="overflow-x-auto">
+        <table class="table w-full" id="listaTask">
+            <thead>
+                <tr>
+                    <th>
+                        N°
+                    </th>
+                    <th>Data e ora</th>
+                    <th>Dettagli</th>
+                    <th>Seleziona</th>
+                </tr>
+            </thead>
+            <tbody id="bodyTask">
+                <tr>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="main.js"></script>
+
 </body>
 </html>
