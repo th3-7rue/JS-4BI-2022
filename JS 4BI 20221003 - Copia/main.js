@@ -63,9 +63,11 @@ btnAdd.onclick = function () {
     }
 }
 btnYes.onclick = function () {
-    localStorage.appendChild("Cestino",myTable.innerHTML)
+    localStorage.setItem("Cestino",myTable.innerHTML)
     ClearList();
-    localStorage.clear();
+    localStorage.removeItem("Lista");
+    localStorage.removeItem("Riga");
+
     alertConferma.checked = false
 }
 btnNo.onclick = function () {
@@ -76,7 +78,7 @@ btnSelected.onclick = function () {
     let rowsLength = rowsInput.length
     for (var i = rowsLength - 1; i >= 0; i--) {
         if (rowsInput[i].checked) {
-            localStorage.setItem("Cestino",)
+            localStorage.setItem("Cestino",myTable.row[i].innerHTML)
             myTable.deleteRow(i)
             riga--
             localStorage.setItem('riga', riga);
