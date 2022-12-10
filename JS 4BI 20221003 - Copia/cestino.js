@@ -51,8 +51,9 @@ btnCSelected.onclick = function () {
     alertConferma.checked = false
 }
 btnRYes.onclick = function () {
-    ClearList();
     localStorage.setItem("Lista", myTable.innerHTML)
+
+    ClearList();
     localStorage.removeItem("Cestino");
     localStorage.removeItem("Riga");
 
