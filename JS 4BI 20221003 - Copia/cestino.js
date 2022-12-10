@@ -8,7 +8,7 @@ const btnRNo = document.getElementById("btnRNo")
 const btnRYes = document.getElementById("btnRYes")
 const btnRSelected = document.getElementById("btnRSelected")
 const myTable = document.getElementById("listaTask");
-const alertConferma = document.getElementById("my-modal-4")
+const alertConferma = document.getElementById("my-modal-4C")
 
 var riga
 if (localStorage.getItem('riga') === null) {
