@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
 </head>
+
 <body>
     <h1 class="font-title mb-2 text-4xl font-extrabold sm:text-5xl lg:text-7xl">Cestino</h1>
     <br>
@@ -18,7 +20,7 @@
     <a class="btn" href="main.html">Torna alla lista</a>
     <br>
     <input type="checkbox" id="my-modal-4C" class="modal-toggle" />
-    <label for="my-modal-4" class="modal cursor-pointer" id="confermaC">
+    <label for="my-modal-4C" class="modal cursor-pointer" id="confermaC">
         <label class="modal-box relative" for="">
             <h3 class="text-lg font-bold">Cancella
                 definitivamente</h3>
@@ -30,19 +32,19 @@
             <label for="my-modal" class="btn btn-primary" id="btnCYes">Cancella tutto</label>
         </label>
     </label>
-<input type="checkbox" id="my-modal-3C" class="modal-toggle" />
-<label for="my-modal-3" class="modal cursor-pointer" id="confermaRC">
-    <label class="modal-box relative" for="">
-        <h3 class="text-lg font-bold">Ripristina</h3>
-        <p class="py-4">Sei proprio sicuro di voler ripristinare gli elementi selezionati?
-        </p>
+    <input type="checkbox" id="my-modal-4R" class="modal-toggle" />
+    <label for="my-modal-4R" class="modal cursor-pointer" id="confermaRC">
+        <label class="modal-box relative" for="">
+            <h3 class="text-lg font-bold">Ripristina</h3>
+            <p class="py-4">Sei proprio sicuro di voler ripristinare gli elementi selezionati?
+            </p>
 
-        <label for="my-modal" class="btn btn-ghost" id="btnRNo">No, annulla</label>
-        <label for="my-modal" class="btn btn-secondary" id="btnRSelected">Solo gli elementi selezionati</label>
-        <label for="my-modal" class="btn btn-primary" id="btnRYes">Ripristina tutto</label>
+            <label for="my-modal" class="btn btn-ghost" id="btnRNo">No, annulla</label>
+            <label for="my-modal" class="btn btn-secondary" id="btnRSelected">Solo gli elementi selezionati</label>
+            <label for="my-modal" class="btn btn-primary" id="btnRYes">Ripristina tutto</label>
+        </label>
     </label>
-</label>
-<br>
+    <br>
 
     <div class="overflow-x-auto">
         <table class="table w-full" id="listaTask">
@@ -66,4 +68,5 @@
     <script src="cestino.js"></script>
 
 </body>
+
 </html>
