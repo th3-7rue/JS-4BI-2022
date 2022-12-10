@@ -10,9 +10,8 @@ const alertConferma = document.getElementById("my-modal-4C")
 const alertConfermaR = document.getElementById("my-modal-4R")
 
 var riga
-if (localStorage.getItem('riga') === null) {
-    localStorage.setItem('riga', 0)
-}
+localStorage.setItem('riga', 0)
+
 riga = parseInt(localStorage.getItem('riga'))
 function ClearList() {
     myTable.innerHTML = ""
