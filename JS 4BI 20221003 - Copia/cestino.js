@@ -81,7 +81,7 @@ btnRSelected.onclick = function () {
         myRiga++
         localStorage.setItem("Cestino", myTable.innerHTML)
     }
-    alertConferma.checked = false
+    alertConfermaR.checked = false
 }
 
 myTable.innerHTML = localStorage.getItem("Cestino");
