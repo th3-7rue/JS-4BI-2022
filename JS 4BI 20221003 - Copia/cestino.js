@@ -1,14 +1,13 @@
-const btnClear = document.getElementById("btnCClear");
 const btnCNo = document.getElementById("btnCNo")
 const btnCYes = document.getElementById("btnCYes")
 const btnCSelected = document.getElementById("btnCSelected")
 
-const btnRClear = document.getElementById("btnRClear");
 const btnRNo = document.getElementById("btnRNo")
 const btnRYes = document.getElementById("btnRYes")
 const btnRSelected = document.getElementById("btnRSelected")
 const myTable = document.getElementById("bodyTask");
 const alertConferma = document.getElementById("my-modal-4C")
+const alertConfermaR = document.getElementById("my-modal-4R")
 
 var riga
 if (localStorage.getItem('riga') === null) {
@@ -52,7 +51,13 @@ btnCSelected.onclick = function () {
     }
     alertConferma.checked = false
 }
-//btnRClear.onclick = function () {
+btnRYes.onclick = function () {
+    ClearList();
+    localStorage.setItem("Lista", myTable.innerHTML)
+    localStorage.removeItem("Cestino");
+    localStorage.removeItem("Riga");
 
-//}
+    alertConfermaR.checked = false
+}
+
 myTable.innerHTML = localStorage.getItem("Cestino");
