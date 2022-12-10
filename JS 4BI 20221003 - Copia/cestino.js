@@ -59,5 +59,8 @@ btnRYes.onclick = function () {
 
     alertConfermaR.checked = false
 }
+btnRNo.onclick = function () {
+    alertConfermaR.checked = false
+}
 
 myTable.innerHTML = localStorage.getItem("Cestino");
