@@ -12,8 +12,11 @@
 </head>
 <body>
     <h1 class="font-title mb-2 text-4xl font-extrabold sm:text-5xl lg:text-7xl">Cestino</h1>
-    <label id="btnCClear" class="btn" for="my-modal-4C">Cancella definitivamente</label>
-    <label id="btnCRestore" class="btn" for="my-modal-3C">Ripristina</label>
+    <br>
+    <label id="btnCClear" class="btn btn-primary" for="my-modal-4C">Cancella definitivamente</label>
+    <label id="btnCRestore" class="btn btn-ghost" for="my-modal-3C">Ripristina</label>
+    <a class="btn" href="main.html">Torna alla lista</a>
+    <br>
     <input type="checkbox" id="my-modal-4C" class="modal-toggle" />
     <label for="my-modal-4" class="modal cursor-pointer" id="confermaC">
         <label class="modal-box relative" for="">
@@ -27,7 +30,6 @@
             <label for="my-modal" class="btn btn-primary" id="btnCYes">Cancella tutto</label>
         </label>
     </label>
-<br>
 <input type="checkbox" id="my-modal-3C" class="modal-toggle" />
 <label for="my-modal-3" class="modal cursor-pointer" id="confermaRC">
     <label class="modal-box relative" for="">
@@ -61,7 +63,7 @@
             </tbody>
         </table>
     </div>
-    <script src="main.js"></script>
+    <script src="cestino.js"></script>
 
 </body>
 </html>
