@@ -7,7 +7,7 @@ const btnRClear = document.getElementById("btnRClear");
 const btnRNo = document.getElementById("btnRNo")
 const btnRYes = document.getElementById("btnRYes")
 const btnRSelected = document.getElementById("btnRSelected")
-const myTable = document.getElementById("listaTask");
+const myTable = document.getElementById("bodyTask");
 const alertConferma = document.getElementById("my-modal-4C")
 
 var riga
@@ -52,4 +52,7 @@ btnCSelected.onclick = function () {
     }
     alertConferma.checked = false
 }
+//btnRClear.onclick = function () {
+
+//}
 myTable.innerHTML = localStorage.getItem("Cestino");
