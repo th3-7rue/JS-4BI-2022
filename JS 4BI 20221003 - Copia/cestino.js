@@ -62,5 +62,26 @@ btnRYes.onclick = function () {
 btnRNo.onclick = function () {
     alertConfermaR.checked = false
 }
+btnRSelected.onclick = function () {
+    let rowsInput = myTable.getElementsByTagName('input')
+    let rowsLength = rowsInput.length
+    for (var i = rowsLength - 1; i >= 0; i--) {
+        if (rowsInput[i].checked) {
+            myTable.deleteRow(i)
+            riga--
+            localStorage.setItem('riga', riga);
+            localStorage.setItem("Cestino", myTable.innerHTML)
+
+        }
+    }
+    let th = myTable.getElementsByTagName('th')
+    var myRiga = 1
+    for (let i = 0; i < rowsInput.length; i++) {
+        th[i].innerHTML = myRiga
+        myRiga++
+        localStorage.setItem("Cestino", myTable.innerHTML)
+    }
+    alertConferma.checked = false
+}
 
 myTable.innerHTML = localStorage.getItem("Cestino");
