@@ -78,7 +78,7 @@ btnSelected.onclick = function () {
     let rowsLength = rowsInput.length
     for (var i = rowsLength - 1; i >= 0; i--) {
         if (rowsInput[i].checked) {
-            localStorage.setItem("Cestino",myTable.row[i].innerHTML)
+            localStorage.setItem("Cestino",myTable.rows[i].innerHTML)
             myTable.deleteRow(i)
             riga--
             localStorage.setItem('riga', riga);
